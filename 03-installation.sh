@@ -1,9 +1,11 @@
 #!/bin/bash
 
-if [ $(id -u) -eq 0 ]
+if [ $(id -u) -ne 0 ]
 then
- echo "proceed to install mysql"
-else
  echo "error : run with root user"
- exit 1
-fi
+exit 1
+else
+ echo "user is root access"
+ fi
+
+dnf install mysql
