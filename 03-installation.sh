@@ -8,10 +8,11 @@ else
  echo "user is root access"
  fi
 
-dnf install mysql
+dnf list installed mysql
 
-if [ $(echo $?) -eq 0 ]
- then echo "mysql is installed successfully"
+if [ $(echo $? -eq 0) ]
+ then
+ echo "mysql is already installed"
 else
- echo " error"
+ dnf install mysql
 fi
