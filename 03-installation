@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ $(id -u) -et 0 ]
+then
+ print "proceed to install mysql"
+else
+ print "error : run with root user"
+fi
