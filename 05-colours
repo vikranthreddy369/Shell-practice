@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 
-if [ $userid -eq 1]
+if [ $userid -eq 1 ] 
  then
   echo "error : Run the script with user access"
 else
