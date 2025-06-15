@@ -4,17 +4,17 @@ USERID=$(id -u)
 
 if [ $USERID -eq 1 ] 
  then
-  echo "error : Run the script with user access"
- exit 1
+   echo "error : Run the script with user access"
+   exit 1
  else
- echo "You are running with user access"
+   echo "You are running with user access"
 fi
 
 VALIDATE(){
     if [ $1 -eq 0 ]
-    then
+     then
      echo "Installing $2 is success"
-    else
+     else
      echo "Installing $2 is Failure"
      exit 1
     fi
@@ -26,7 +26,7 @@ if [ $? -ne 0 ]
   echo " Mysql is not installed ..going to install"
   dnf install mysql
   VALIDATE $? "Mysql"
-else
+ else
   echo " mysql is alread installed , nothing to do"
 fi
 
