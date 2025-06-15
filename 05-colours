@@ -1,0 +1,30 @@
+#!/bin/bash
+
+USERID=$(id -u)
+
+if [ $userid -eq 1]
+ then
+  echo "error : Run the script with user access"
+else
+ echo "You are running with user access"
+fi
+
+dnf list installed mysql
+if [ $? -ne 0 ]
+ then
+  echo " Mysql is not installed ..going to install"
+  dnf install mysql
+  VALIDATE $? "Mysql"
+else
+  echo " mysql is alread installed , nothing to do"
+fi
+
+VALIDATE(){
+    if [ $1 -eq 0 ]
+    then
+     echo "Installing $2 is success"
+    else
+     echo "Installing $2 is Failure"
+     exit 1
+    fi
+}
