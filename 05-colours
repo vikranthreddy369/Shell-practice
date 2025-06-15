@@ -1,13 +1,12 @@
 #!/bin/bash
 
 USERID=$(id -u)
-
-if [ $USERID -eq 1 ] 
+if [ $USERID -eq 0 ] 
  then
-   echo "error : Run the script with user access"
-   exit 1
+    echo "You are running with user access"
  else
-   echo "You are running with user access"
+   echo "error : Run the script with user access"   
+   exit 1
 fi
 
 VALIDATE(){
