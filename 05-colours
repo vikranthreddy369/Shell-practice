@@ -10,6 +10,16 @@ else
  echo "You are running with user access"
 fi
 
+VALIDATE(){
+    if [ $1 -eq 0 ]
+    then
+     echo "Installing $2 is success"
+    else
+     echo "Installing $2 is Failure"
+     exit 1
+    fi
+}
+
 dnf list installed mysql
 if [ $? -ne 0 ]
  then
@@ -20,12 +30,3 @@ else
   echo " mysql is alread installed , nothing to do"
 fi
 
-VALIDATE(){
-    if [ $1 -eq 0 ]
-    then
-     echo "Installing $2 is success"
-    else
-     echo "Installing $2 is Failure"
-     exit 1
-    fi
-}
