@@ -6,7 +6,7 @@ if [ $USERID -eq 1 ]
  then
   echo "error : Run the script with user access"
  exit 1
-else
+ else
  echo "You are running with user access"
 fi
 
