@@ -2,10 +2,10 @@
 
 USERID=$(id -u)
 
-if [ $userid -eq 1 ] 
+if [ $USERID -eq 1 ] 
  then
   echo "error : Run the script with user access"
-  exit 1
+ exit 1
 else
  echo "You are running with user access"
 fi
