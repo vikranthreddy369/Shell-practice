@@ -29,3 +29,22 @@ if [ $? -ne 0 ]
   echo " mysql is alread installed , nothing to do"
 fi
 
+dnf list installed python3
+if [ $? -ne 0 ]
+ then
+ echo " python3 is not installed .. going to install"
+ dnf install python3
+ VALIDATE $? "python3"
+ else 
+ echo "python3 is already installed ...nothing to do"
+fi
+
+dnf list installed nginx
+if [ $? -ne 0 ]
+ then
+ echo "nginx is not installed...going to install"
+ dnf install nginx
+ VALIDATE $? "nginx"
+ else
+ echo "nginx is already installed ...nothing to do"
+fi
